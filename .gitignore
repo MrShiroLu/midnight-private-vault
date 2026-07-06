@@ -1,0 +1,9 @@
+node_modules/
+
+cli/logs/
+cli/midnight-level-db/
+contract/dist/
+contract/reports/
+
+*.log
+.DS_Store
