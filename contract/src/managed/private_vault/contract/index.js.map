@@ -1,0 +1,8 @@
+{
+  "version": 3,
+  "file": "index.js",
+  "sourceRoot": "../../../../",
+  "sources": ["src/private_vault.compact", "compiler/standard-library.compact"],
+  "names": [],
+  "mappings": ";;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;EAYA;;;;;;;;;;;;;;;;MAQA,AAAA,OAMC;;;;;cANsB,QAAgB;;;;;;;;;;;;;;;;;;yCAAhB,QAAgB;;;;;;;oEAAhB,QAAgB;;;OAMtC;MAED,AAAA,QASC;;;;;cATuB,QAAgB;;;;;;;;;;;;;;;;;;yCAAhB,QAAgB;;;;;;;qEAAhB,QAAgB;;;OASvC;MAED,AAAA,SAEC;;OAAA;MAED,AAAA,aAEC;;OAAA;;;;;;;;;;GA/BA;EAFD;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;IAHA;;;;;;;;;;yEAAkD;IAClD;;;;;;;;;yEAAoC;UAGlC,KAAY;IAAZ;;;;;;;;;;6FAAA,KAAY;;;;wEAAA;;;;;;;GACb;ECdD,AAAA,kBAAA;oEAAA;;;EDiBA,AAAA,iBAAoC;;0DAApC,cAAoC;;;;;;;;;;;;;;GAAA;EACpC,AAAA,eAAiC;;0DAAjC,YAAiC;;;;;;;;;;;;;;GAAA;EAEjC,AAAA,UAMC,4BANsB,QAAgB;UAC/B,IAA0C;;UAC1C,YAAkD;;;;;;;4BAAnB,QAAM;UACrC,YAAgD,yBAAZ,YAAU;IACpD;;;;;;;;;;2HAAgB,IAAE;;;2HAAE,YAAU;;;wEAAtB;UACR,KAAY;IAAZ;;;;;;;;;;6FAAA,KAAY;;;;wEAAA;;GACb;EAED,AAAA,WASC,4BATuB,QAAgB;UAChC,IAA0C;;UAC1C,YAA2B;4BAC1B,YAAU,IAAI,QAAM;UACrB,eAAmD,yBAAZ,YAAU;kEAChD;;;;;;;;;;;;;;6JAAgB,IAAE;;;uIAAV;0CAAe,eAAa;;UACrC,YAA8C,4BAAhC,YAAU,IAAG,QAAM;;0BAAnB,YAAU,GAAG,QAAM;UACjC,eAAmD,yBAAZ,YAAU;IACvD;;;;;;;;;;2HAAgB,IAAE;;;2HAAE,eAAa;;;wEAAzB;;GACT;EAED,AAAA,YAEC,CAFwB,IAAa;;mCAC+B,IAAE;GACtE;EAED,AAAA,gBAEC,CAF4B,SAAiB;;;wEACwB,SAAO;;GAC5E;;;;;;;;;;;;;;;;;;;;IApCD;;;;;uCAAA;;;;;;;;;;;;;;;;4GAAkD;;;;;;uCAAlD;;;;;;;;;;;;4GAAkD;;;;;;;;;;;;;;uCAAlD;;;;;;;;;;;;;;;4GAAkD;;;;;;;;;;;;;;uCAAlD;;;;;;;;;;;;;;;;;4GAAkD;;;;;;;;;KAAA;IAClD;qCAAA;;;;;;;;;;;0GAAoC;KAAA;;;;;;;;;;EA6BpC,AAAA,SAEC;;;;UAFwB,IAAa;;;;;;;;uCAAb,IAAa;GAErC;EAED,AAAA,aAEC;;;;UAF4B,SAAiB;;;;;;;;2CAAjB,SAAiB;GAE7C;;;;"
+}

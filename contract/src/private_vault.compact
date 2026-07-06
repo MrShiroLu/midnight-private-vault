@@ -1,0 +1,46 @@
+// This file is part of riseMoon (Midnight New Moon submission).
+// SPDX-License-Identifier: Apache-2.0
+
+pragma language_version >= 0.20;
+
+import CompactStandardLibrary;
+
+// public state: only commitments (hashes) and a deposit counter are visible.
+// no address, identity or amount is ever stored in the clear on ledger.
+export ledger balances: Map<Bytes<32>, Bytes<32>>;
+export ledger depositCount: Counter;
+
+constructor() {
+  depositCount.increment(1);
+}
+
+// private witnesses: read from off-chain private state, never sent on-chain
+witness localSecretKey(): Bytes<32>;
+witness localBalance(): Uint<64>;
+
+export circuit deposit(amount: Uint<64>): [] {
+  const pk = disclose(publicKey(localSecretKey()));
+  const newBalance = (localBalance() + amount) as Uint<64>;
+  const commitment = disclose(commitBalance(newBalance));
+  balances.insert(pk, commitment);
+  depositCount.increment(1);
+}
+
+export circuit withdraw(amount: Uint<64>): [] {
+  const pk = disclose(publicKey(localSecretKey()));
+  const oldBalance = localBalance();
+  assert(oldBalance >= amount, "Insufficient balance");
+  const oldCommitment = disclose(commitBalance(oldBalance));
+  assert(balances.lookup(pk) == oldCommitment, "Balance commitment mismatch");
+  const newBalance = (oldBalance - amount) as Uint<64>;
+  const newCommitment = disclose(commitBalance(newBalance));
+  balances.insert(pk, newCommitment);
+}
+
+export circuit publicKey(sk: Bytes<32>): Bytes<32> {
+  return persistentHash<Vector<2, Bytes<32>>>([pad(32, "vault:pk:"), sk]);
+}
+
+export circuit commitBalance(balance: Uint<64>): Bytes<32> {
+  return persistentHash<Vector<2, Bytes<32>>>([pad(32, "vault:bal:"), balance as Field as Bytes<32>]);
+}
