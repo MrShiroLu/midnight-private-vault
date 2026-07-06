@@ -1,0 +1,20 @@
+{
+  "name": "@midnight-ntwrk/private-vault-cli",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "standalone": "docker compose -f standalone.yml pull && node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm src/standalone.ts",
+    "build": "rm -rf dist && tsc --project tsconfig.build.json",
+    "lint": "eslint src",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "preview": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm src/preview.ts",
+    "preview-ps": "docker compose -f proof-server.yml pull && node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm src/preview-start-proof-server.ts",
+    "preprod": "node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm src/preprod.ts",
+    "preprod-ps": "docker compose -f proof-server.yml pull && node --no-warnings --experimental-specifier-resolution=node --loader ts-node/esm src/preprod-start-proof-server.ts"
+  },
+  "dependencies": {
+    "@midnight-ntwrk/private-vault-contract": "*"
+  }
+}
