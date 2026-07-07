@@ -60,6 +60,12 @@ npm install                 # installs workspace deps (contract + cli)
 npm run build --workspace=contract   # compiles the TypeScript wrapper around the ZK artifacts
 ```
 
+The `.prover` key files under `contract/src/managed/*/keys/` are large,
+deterministic build outputs of `compact compile` and are not committed to
+keep the repository lightweight. Running `compact compile` locally
+regenerates them (the `.zkir` circuit definitions and `.verifier` keys are
+committed as proof of a successful compile).
+
 Start the local proof server (required for generating ZK proofs against a
 live network):
 
